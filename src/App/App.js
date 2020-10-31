@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import axios from 'axios';
 
 
 class App extends Component {
@@ -15,7 +16,12 @@ class App extends Component {
   }
 
   fileUploadHandler = event => {
-        
+    const fd = new FormData();
+    fd.append('excel', this.state.selectedFile, this.state.selectedFile.name);
+    axios.post('', fd)
+      .then(res => {
+        console.log(res)
+      }); //api
   }
 
   render() {
