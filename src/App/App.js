@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import axios from 'axios';
 
 let FileName = "No File";
 let no_invoice = 0;
@@ -28,12 +29,13 @@ class App extends Component {
     FileName = FileName1
 
     //FileName = event.target.files[0].name
-    //const fd = new FormData();
-    //fd.append('excel', this.state.selectedFile, this.state.selectedFile.name);
-    //axios.post('', fd)
-    //.then(res => {
-    //console.log(res)
-    //}); //api
+    const fd = new FormData();
+    fd.append('excel', this.state.selectedFile);
+    console.log(fd)
+    axios.post('http://localhost:4000/upload', fd)
+    .then(res => {
+    console.log(res)
+    }); //api
   }
 
   render() {
