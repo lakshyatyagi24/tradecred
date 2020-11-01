@@ -14,7 +14,7 @@ const upload = multer({
     storage: storage
 })
 
-app.post("/upload", upload.single('fd'), (req, res) => {
+app.post("/upload", upload.single('Fd'), (req, res) => {
     console.log(req.file);
 })
 

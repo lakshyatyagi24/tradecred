@@ -7,7 +7,7 @@ let no_invoice = 0;
 let total_amount = 0;
 let total_vendors = 0;
 let invalid_invoice = 0;
-let FileName1
+let FileName1;
 
 class App extends Component {
 
@@ -28,14 +28,13 @@ class App extends Component {
     })
     FileName = FileName1
 
-    //FileName = event.target.files[0].name
     const fd = new FormData();
-    fd.append('excel', this.state.selectedFile);
-    console.log(fd)
+    fd.append('excel', this.state.selectedFile, this.state.selectedFile.name);
+    console.log(event.target.files[0].name)
     axios.post('http://localhost:4000/upload', fd)
-    .then(res => {
-    console.log(res)
-    }); //api
+      .then(res => {
+        console.log(res)
+      }); //api
   }
 
   render() {
