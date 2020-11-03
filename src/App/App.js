@@ -29,7 +29,7 @@ class App extends Component {
     FileName = FileName1
 
     const fd = new FormData();
-    fd.append('excel', this.state.selectedFile, this.state.selectedFile.name);
+    //fd.append('excel', this.state.selectedFile, this.state.selectedFile.name);
     //console.log(event.target.files[0].name)
     //axios.post('http://localhost:4000/upload', fd)
       //.then(res => {
