@@ -30,11 +30,11 @@ class App extends Component {
 
     const fd = new FormData();
     fd.append('excel', this.state.selectedFile, this.state.selectedFile.name);
-    console.log(event.target.files[0].name)
-    axios.post('http://localhost:4000/upload', fd)
-      .then(res => {
-        console.log(res)
-      }); //api
+    //console.log(event.target.files[0].name)
+    //axios.post('http://localhost:4000/upload', fd)
+      //.then(res => {
+        //console.log(res)
+      //}); //api
   }
 
   render() {
